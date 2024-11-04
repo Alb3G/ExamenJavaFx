@@ -10,8 +10,8 @@ import java.time.LocalDateTime;
 
 /**
  * @author Alberto Guzman Moreno
- * This is the controller of the hello-view.fxml
- * where we will handle the logic of the view and how to interact with it.
+ * Esta clase es el controlador y gestiona toda la logica e inicializacion
+ * de la vista y sus elementos.
  */
 public class HelloController {
 
@@ -44,9 +44,8 @@ public class HelloController {
     public void initialize() {
         setTableData();
     }
-
     /**
-     * This method sets the data of the table
+     * Este metodo sin parametros inicializa las columnas y elementos de la vista
      */
     private void setTableData() {
         emailCol.setCellValueFactory(new PropertyValueFactory<>("email"));

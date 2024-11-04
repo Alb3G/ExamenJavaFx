@@ -5,7 +5,7 @@ import lombok.Data;
 
 
 /**
- * @autor Alberto Guzman Moreno
+ * @author Alberto Guzman Moreno
  *
  * Esta clase representa un usuario con los siguientes atributos:
  * email, plataforma, isAdmin, softwareVersion y stamp.
