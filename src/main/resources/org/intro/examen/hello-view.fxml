@@ -1,16 +1,105 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="org.intro.examen.HelloController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1080.0" stylesheets="@css/general.css" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.intro.examen.controllers.HelloController">
+   <center>
+      <SplitPane dividerPositions="0.5" prefHeight="160.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <items>
+            <TableView fx:id="table" prefHeight="398.0" prefWidth="279.0">
+              <columns>
+                <TableColumn fx:id="emailCol" prefWidth="75.0" text="Email" />
+                <TableColumn fx:id="platformCol" prefWidth="75.0" text="Platform" />
+                  <TableColumn fx:id="adminCol" prefWidth="75.0" text="Is Admin" />
+                  <TableColumn fx:id="versionCol" prefWidth="75.0" text="Version" />
+                  <TableColumn fx:id="stampCol" prefWidth="75.0" text="Time Stamp" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+            <VBox prefHeight="398.0" prefWidth="298.0" styleClass="background">
+               <children>
+                  <Label text="Add User">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label text="Email">
+                     <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField fx:id="emailInput" styleClass="text-field">
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Label text="Platform">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <ChoiceBox fx:id="platformChoice" prefHeight="26.0" prefWidth="255.0">
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                  </ChoiceBox>
+                  <Label text="Version">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Spinner fx:id="versionSpinner">
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                  </Spinner>
+                  <CheckBox fx:id="adminCheckBox" mnemonicParsing="false" styleClass="label-bright" text="Is Admin" />
+                  <FlowPane>
+                     <VBox.margin>
+                        <Insets top="30.0" />
+                     </VBox.margin>
+                     <children>
+                        <Button fx:id="addUsertbtn" mnemonicParsing="false" onAction="#onAdd" prefHeight="34.0" prefWidth="126.0" text="Add">
+                           <FlowPane.margin>
+                              <Insets right="50.0" />
+                           </FlowPane.margin>
+                        </Button>
+                        <Button fx:id="cleartableBtn" mnemonicParsing="false" onAction="#onClear" prefHeight="34.0" prefWidth="126.0" text="Clear Table" />
+                     </children>
+                  </FlowPane>
+               </children>
+               <padding>
+                  <Insets bottom="50.0" left="50.0" right="50.0" top="20.0" />
+               </padding>
+            </VBox>
+        </items>
+      </SplitPane>
+   </center>
+</BorderPane>
